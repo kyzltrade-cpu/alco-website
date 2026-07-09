@@ -39,7 +39,7 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
 
-document.querySelectorAll('.reveal, .step, .step-row, .product-card, .proof-card, .buy-card, .persona-card, .persona-row, .founder-tile')
+document.querySelectorAll('.reveal, .step, .step-row, .product-card, .proof-card, .buy-card, .persona-panel, .persona-row, .founder-tile')
   .forEach(el => observer.observe(el));
 
 // Smooth nav links
