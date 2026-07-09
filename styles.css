@@ -18,6 +18,7 @@ html::-webkit-scrollbar { display: none; }
   --f-body: 'Inter', sans-serif;
 }
 
+html { background: var(--blue); }
 body { font-family: var(--f-body); background: var(--cream); color: var(--black); overflow-x: hidden; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 52px; }
 
@@ -28,7 +29,7 @@ body { font-family: var(--f-body); background: var(--cream); color: var(--black)
   padding: 30px 56px;
   background: rgba(247,244,237,0); backdrop-filter: blur(0px);
   border-bottom: 1.5px solid transparent;
-  transition: background .35s ease, padding .35s ease, border-color .35s ease, backdrop-filter .35s ease;
+  transition: background .35s ease, padding .35s ease, border-color .35s ease, backdrop-filter .35s ease, left .4s ease, right .4s ease, top .4s ease, border-radius .4s ease, box-shadow .4s ease;
 }
 #nav.scrolled {
   background: rgba(247,244,237,.96);
@@ -77,7 +78,7 @@ body { font-family: var(--f-body); background: var(--cream); color: var(--black)
 /* ── MOBILE MENU ─────────────────────────────────────────────────────── */
 .nav-mobile-menu {
   position: fixed; inset: 0; z-index: 998;
-  background: var(--black);
+  background: #fff;
   display: flex; flex-direction: column; align-items: flex-start; justify-content: center;
   padding: 0 44px;
   opacity: 0; pointer-events: none;
@@ -86,16 +87,19 @@ body { font-family: var(--f-body); background: var(--cream); color: var(--black)
 .nav-mobile-menu.open { opacity: 1; pointer-events: all; }
 .mobile-nav-link {
   font-family: var(--f-disp); font-size: clamp(36px, 11vw, 52px);
-  font-weight: 800; text-transform: uppercase; color: rgba(255,255,255,.45);
+  font-weight: 800; text-transform: uppercase; color: rgba(10,10,10,.18);
   letter-spacing: -.01em; line-height: 1.15;
   transition: color .18s; display: block; padding: 7px 0;
 }
-.mobile-nav-link:hover { color: #fff; }
+.mobile-nav-link:hover { color: var(--black); }
 .nav-mobile-shop {
   margin-top: 28px; padding: 14px 32px !important; border-radius: 999px;
-  background: var(--lime); color: var(--black) !important;
+  background: var(--black); color: var(--lime) !important;
   font-size: 16px !important; letter-spacing: .1em; line-height: 1 !important;
 }
+/* Ensure hamburger X and logo are visible against white menu */
+#nav:has(.nav-hamburger.open) .nav-hamburger span { background: var(--black) !important; }
+#nav:has(.nav-hamburger.open) .nav-logo { color: var(--black); }
 
 /* ── HERO ────────────────────────────────────────────────────────────── */
 #hero {
@@ -598,7 +602,13 @@ body { font-family: var(--f-body); background: var(--cream); color: var(--black)
 }
 @media (max-width: 768px) {
   #nav { padding: 14px 20px; }
-  #nav.scrolled { padding: 10px 20px; }
+  #nav.scrolled {
+    left: 14px; right: 14px; top: 10px;
+    border-radius: 999px;
+    padding: 10px 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,.14);
+    border-color: transparent;
+  }
   .nav-logo { font-size: 22px; }
   .nav-right { margin-left: auto; }
   .nav-cta { display: none; }
