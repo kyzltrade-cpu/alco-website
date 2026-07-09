@@ -279,7 +279,8 @@ body { font-family: var(--f-body); background: var(--cream); color: var(--black)
   font-weight: 800; text-transform: uppercase; line-height: .9;
   letter-spacing: -.02em; color: var(--black); margin: 0;
 }
-.why-right { display: flex; flex-direction: column; gap: 20px; }
+.why-right { display: flex; flex-direction: column; gap: 20px; justify-content: flex-end; }
+.why-headline-wrap { display: flex; flex-direction: column; gap: 14px; }
 .why-crossouts { display: flex; flex-direction: column; gap: 3px; }
 .why-cross {
   display: block;
