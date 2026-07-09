@@ -679,7 +679,8 @@ body { font-family: var(--f-body); background: var(--cream); color: var(--black)
   .persona-panel { min-height: 280px; padding: 36px 28px 32px; }
   .persona-panel-title { font-size: 48px; margin-bottom: 16px; }
   .founder-row { grid-template-columns: 1fr; min-height: auto; }
-  .founder-row-photo { order: -1; height: 360px; }
+  .founder-row-photo { order: -1; height: auto; }
+  .founder-row-photo img { height: auto; object-fit: unset; }
   .founder-row-content { padding: 32px 24px 36px; }
   .founder-row--flip .founder-row-content { padding: 32px 24px 36px; }
   .founder-row-name { font-size: 52px; }
