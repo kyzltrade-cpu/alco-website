@@ -125,8 +125,23 @@
     .purchase-opt-price { font-size: 12px; color: rgba(10,10,10,.5); }
     .purchase-opt-save { font-family: var(--f-disp); font-size: 9px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--blue); margin-top: 4px; display: block; }
 
+    /* ── PREORDER EMAIL ── */
+    .preorder-email {
+      width: 100%; font-family: var(--f-body); font-size: 14px; color: var(--black);
+      padding: 14px 18px; border-radius: 999px; border: 1.5px solid rgba(10,10,10,.14);
+      margin-bottom: 16px; transition: border-color .18s;
+    }
+    .preorder-email:focus { outline: none; border-color: var(--blue); }
+    .preorder-hp {
+      position: absolute; width: 1px; height: 1px; overflow: hidden;
+      clip: rect(0 0 0 0); opacity: 0; pointer-events: none;
+    }
+    .preorder-status { font-size: 13px; margin-top: 0; margin-bottom: 28px; min-height: 18px; }
+    .preorder-status--success { color: #1a7a3c; }
+    .preorder-status--error { color: #c0392b; }
+
     /* ── CTA BUTTONS ── */
-    .cta-stack { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+    .cta-stack { display: flex; flex-direction: column; gap: 10px; margin-bottom: 10px; }
     .btn-atc {
       font-family: var(--f-disp); font-size: 14px; font-weight: 700;
       letter-spacing: .14em; text-transform: uppercase;
@@ -179,7 +194,7 @@
   <a href="index.html" class="shop-nav-logo">alco.</a>
   <div class="shop-nav-trust">
     <span>Free AU shipping</span>
-    <span>Ships within 24hrs</span>
+    <span>Preordering now</span>
     <span>GMP manufactured</span>
   </div>
   <a href="index.html" class="shop-nav-back">← Back</a>
@@ -214,7 +229,7 @@
 
   <!-- RIGHT: INFO -->
   <div class="product-info">
-    <span class="product-badge">In Stock · Ships within 24hrs</span>
+    <span class="product-badge">Preorder Now · Ships at Launch</span>
     <h1 class="product-title">alco.<br>Anti Hangover<br>Jelly</h1>
     <p class="product-sub">DHM 200mg · Peach Plum · 15ml stick · 12-pack carton</p>
 
@@ -259,11 +274,15 @@
       <span class="qty-note">12 sticks per carton</span>
     </div>
 
-    <!-- CTA -->
+    <!-- PREORDER -->
+    <span class="selector-label">Email</span>
+    <input type="email" id="preorderEmail" class="preorder-email" placeholder="you@email.com" autocomplete="email">
+    <input type="text" id="preorderWebsite" name="website" class="preorder-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
     <div class="cta-stack">
-      <button class="btn-atc">Add to Cart →</button>
-      <button class="btn-buy-now">Buy Now</button>
+      <button class="btn-atc" id="preorderBtn">Preorder Now →</button>
     </div>
+    <p class="preorder-status" id="preorderStatus" aria-live="polite"></p>
 
     <!-- TRUST STRIP -->
     <div class="trust-strip">
@@ -307,7 +326,7 @@
           <span class="accordion-icon">+</span>
         </button>
         <div class="accordion-body">
-          Free standard shipping Australia-wide on all orders. Dispatched within 24 hours. Estimated delivery 2 to 5 business days.
+          Free standard shipping Australia-wide on all preorders. We'll email you the moment your stick ships, with estimated delivery of 2 to 5 business days from dispatch.
         </div>
       </div>
       <div class="accordion-item">
@@ -385,6 +404,73 @@
     document.querySelectorAll('.accordion-icon').forEach(i => i.classList.remove('open'));
     if (!isOpen) { body.classList.add('open'); icon.classList.add('open'); }
   }
+
+  // Preorder
+  const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const preorderBtn = document.getElementById('preorderBtn');
+  const preorderEmail = document.getElementById('preorderEmail');
+  const preorderWebsite = document.getElementById('preorderWebsite');
+  const preorderStatus = document.getElementById('preorderStatus');
+
+  function showPreorderStatus(message, isError) {
+    preorderStatus.textContent = message;
+    preorderStatus.classList.toggle('preorder-status--success', !isError);
+    preorderStatus.classList.toggle('preorder-status--error', isError);
+  }
+
+  function getSelectedFlavour() {
+    const active = document.querySelector('.flavour-btn.active');
+    return active ? active.dataset.flavour : 'cobalt';
+  }
+
+  function getSelectedPurchaseType() {
+    const active = document.querySelector('.purchase-opt.active');
+    return active ? active.dataset.type : 'one-time';
+  }
+
+  preorderBtn.addEventListener('click', async () => {
+    const email = preorderEmail.value.trim();
+
+    if (!EMAIL_REGEX.test(email)) {
+      showPreorderStatus('Enter a valid email to preorder.', true);
+      preorderEmail.focus();
+      return;
+    }
+
+    preorderBtn.disabled = true;
+    preorderBtn.textContent = 'Submitting…';
+    showPreorderStatus('', false);
+
+    try {
+      const response = await fetch('/api/preorder', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email,
+          flavor: getSelectedFlavour(),
+          purchaseType: getSelectedPurchaseType(),
+          quantity: qty,
+          website: preorderWebsite.value,
+          sourcePage: 'shop.html'
+        })
+      });
+      const result = await response.json();
+
+      if (result.success) {
+        showPreorderStatus("You're on the list. We'll email you when it's time to check out.", false);
+        preorderEmail.value = '';
+        preorderBtn.textContent = 'Preordered ✓';
+      } else {
+        showPreorderStatus(result.error || 'Something went wrong. Try again.', true);
+        preorderBtn.disabled = false;
+        preorderBtn.textContent = 'Preorder Now →';
+      }
+    } catch (err) {
+      showPreorderStatus('Network error. Check your connection and try again.', true);
+      preorderBtn.disabled = false;
+      preorderBtn.textContent = 'Preorder Now →';
+    }
+  });
 </script>
 </body>
 </html>
