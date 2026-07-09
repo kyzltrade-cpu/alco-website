@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 228 64" fill="none">
+  <!-- Icon mark: cross-section of the jelly stick -->
+  <!-- Blue squircle -->
+  <rect width="64" height="64" rx="20" fill="#5468FF"/>
+  <!-- Lime jelly ring -->
+  <circle cx="32" cy="32" r="21" fill="#B8FF57"/>
+  <!-- Blue center hole -->
+  <circle cx="32" cy="32" r="9" fill="#5468FF"/>
+  <!-- Lime inner pip -->
+  <circle cx="32" cy="32" r="3.5" fill="#B8FF57"/>
+
+  <!-- Wordmark -->
+  <text x="78" y="49"
+    font-family="Nunito, -apple-system, BlinkMacSystemFont, sans-serif"
+    font-weight="900"
+    font-size="44"
+    letter-spacing="-1.5"
+    fill="#0A0A0A">alco</text>
+  <!-- Period: blue circle so it reads as a designed dot, not just punctuation -->
+  <circle cx="214" cy="44" r="6" fill="#5468FF"/>
+</svg>
