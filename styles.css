@@ -504,7 +504,7 @@ body { font-family: var(--f-body); background: var(--cream); color: var(--black)
 .founder-row {
   display: grid; grid-template-columns: 1fr 1fr;
   border-bottom: 1.5px solid rgba(10,10,10,.1);
-  min-height: 520px;
+  min-height: 520px; background: #fff;
 }
 .founder-row-content {
   padding: 56px 64px 56px 52px;
