@@ -275,35 +275,22 @@ body { font-family: var(--f-body); background: var(--cream); color: var(--black)
   font-weight: 800; text-transform: uppercase; line-height: .87;
   letter-spacing: -.025em; color: var(--black); margin: 40px 0 72px;
 }
-.why-items { border-top: 1px solid rgba(0,0,0,.07); }
-.why-item {
-  display: grid; grid-template-columns: 88px 1fr; gap: 0 40px;
-  padding: 44px 0; border-bottom: 1px solid rgba(0,0,0,.07); align-items: start;
-}
-.why-item:nth-child(1) { transition-delay: 0s; }
-.why-item:nth-child(2) { transition-delay: .12s; }
-.why-item:nth-child(3) { transition-delay: .24s; }
-.why-num {
-  font-family: var(--f-disp); font-size: 10px; font-weight: 700;
-  letter-spacing: .25em; text-transform: uppercase;
-  color: rgba(0,0,0,.18); padding-top: 6px;
-}
-.why-body { display: flex; flex-direction: column; }
-.why-problem {
-  font-family: var(--f-disp); font-size: clamp(26px, 3vw, 44px);
-  font-weight: 800; text-transform: uppercase; line-height: .95;
-  letter-spacing: -.015em; color: var(--black);
+.why-crossouts { margin: 56px 0 44px; display: flex; flex-direction: column; gap: 6px; }
+.why-cross {
+  display: block;
+  font-family: var(--f-disp); font-size: clamp(22px, 2.8vw, 40px);
+  font-weight: 700; text-transform: uppercase; line-height: 1.3;
+  letter-spacing: -.01em; color: rgba(10,10,10,.22);
   text-decoration: line-through;
-  text-decoration-color: rgba(232,99,24,.4); text-decoration-thickness: 2px;
-  margin-bottom: 16px;
+  text-decoration-color: rgba(232,99,24,.55); text-decoration-thickness: 1.5px;
 }
-.why-solution {
-  font-size: 14px; font-weight: 500; color: var(--blue);
-  line-height: 1.55; letter-spacing: .01em;
-  opacity: 0; transform: translateY(12px);
-  transition: opacity .55s ease .45s, transform .55s cubic-bezier(0.16,1,0.3,1) .45s;
+.why-crossouts .why-cross:nth-child(2) { transition-delay: .1s; }
+.why-crossouts .why-cross:nth-child(3) { transition-delay: .2s; }
+.why-close {
+  font-family: var(--f-disp); font-size: clamp(18px, 2vw, 28px);
+  font-weight: 700; text-transform: uppercase; letter-spacing: -.01em;
+  color: var(--blue); line-height: 1;
 }
-.why-item.in .why-solution { opacity: 1; transform: translateY(0); }
 
 /* ── HOW IT WORKS (orange section) ──────────────────────────────────── */
 .hiw-header { margin-bottom: 0; }
@@ -702,8 +689,9 @@ body { font-family: var(--f-body); background: var(--cream); color: var(--black)
   #why::after { height: 50px; }
   #persona { padding-top: 60px !important; }
   .why-headline { font-size: 44px; margin-bottom: 44px; }
-  .why-item { grid-template-columns: 48px 1fr; gap: 0 20px; padding: 32px 0; }
-  .why-num { font-size: 9px; padding-top: 4px; }
+  .why-crossouts { margin: 40px 0 32px; gap: 4px; }
+  .why-cross { font-size: 20px; }
+  .why-close { font-size: 18px; }
   .step-row { grid-template-columns: 72px 1fr; gap: 20px; padding: 24px 0; }
   .step-row-num { font-size: 56px; }
   .products-row { grid-template-columns: 1fr 1fr; padding: 28px 22px 0; gap: 8px; }
