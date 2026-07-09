@@ -597,20 +597,14 @@ body { font-family: var(--f-body); background: var(--cream); color: var(--black)
   .products-row { padding: 40px 32px 0; }
 }
 @media (max-width: 768px) {
-  #nav { padding: 12px 20px 0; flex-wrap: wrap; row-gap: 0; }
-  #nav.scrolled { padding: 10px 20px 0; }
+  #nav { padding: 14px 20px; }
+  #nav.scrolled { padding: 10px 20px; }
   .nav-logo { font-size: 22px; }
   .nav-right { margin-left: auto; }
-  .nav-cta { display: block; font-size: 10.5px; padding: 7px 16px; letter-spacing: .1em; }
-  .nav-hamburger { display: none; }
-  .nav-links {
-    display: flex; flex: 0 0 100%; gap: 22px;
-    padding: 8px 0; margin-top: 8px;
-    border-top: 1px solid rgba(255,255,255,.15);
-  }
-  .nav-links a { font-size: 11px; letter-spacing: .04em; }
-  #nav.scrolled .nav-links { border-top-color: rgba(10,10,10,.07); }
-  #hero { flex-direction: column; text-align: center; padding: 100px 24px 36px; gap: 24px; height: auto; overflow: visible; }
+  .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+  .nav-links { display: none; }
+  #hero { flex-direction: column; text-align: center; padding: 80px 24px 36px; gap: 24px; height: auto; overflow: visible; }
   .hero-trust { flex-wrap: wrap; justify-content: center; gap: 4px 10px; }
   .hero-trust-dot { display: none; }
   .hero-content { flex: none; }
@@ -643,7 +637,7 @@ body { font-family: var(--f-body); background: var(--cream); color: var(--black)
 @media (max-width: 480px) {
   .hero-headline { font-size: 44px; }
   .sec-headline { font-size: 40px; }
-  #hero { padding: 80px 20px 40px; gap: 20px; }
+  #hero { padding: 72px 20px 40px; gap: 20px; }
   .hero-tag { font-size: 10px; }
   .hero-sub { font-size: 14px; }
   .container { padding: 0 20px; }
