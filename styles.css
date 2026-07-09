@@ -2,7 +2,24 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 img { display: block; max-width: 100%; }
 a { text-decoration: none; color: inherit; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scrollbar-width: none; -ms-overflow-style: none; }
+html::-webkit-scrollbar { display: none; }
+* { cursor: none !important; }
+
+/* ── CUSTOM CURSOR ───────────────────────────────────────────────────── */
+#cursor {
+  position: fixed;
+  width: 11px; height: 11px;
+  background: #fff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+  transition: width .18s ease, height .18s ease;
+  will-change: left, top;
+}
+#cursor.expanded { width: 20px; height: 20px; }
 
 :root {
   --blue:   #5B6FD6;

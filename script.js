@@ -1,3 +1,14 @@
+// Custom cursor
+const cursorEl = document.getElementById('cursor');
+document.addEventListener('mousemove', e => {
+  cursorEl.style.left = e.clientX + 'px';
+  cursorEl.style.top = e.clientY + 'px';
+});
+document.querySelectorAll('a, button, [role="button"], label').forEach(el => {
+  el.addEventListener('mouseenter', () => cursorEl.classList.add('expanded'));
+  el.addEventListener('mouseleave', () => cursorEl.classList.remove('expanded'));
+});
+
 // Nav transparency on scroll
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
