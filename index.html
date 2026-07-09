@@ -12,8 +12,6 @@
 </head>
 <body>
 
-<div id="cursor"></div>
-
 <!-- ── NAV ─────────────────────────────────────────────────── -->
 <nav id="nav">
   <a href="#" class="nav-logo">alco.</a>
@@ -23,8 +21,20 @@
     <li><a href="#products">Products</a></li>
     <li><a href="#about-section">About</a></li>
   </ul>
-  <a href="#buy" class="nav-cta">Shop Now →</a>
+  <div class="nav-right">
+    <a href="#buy" class="nav-cta">Shop Now →</a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
+<div class="nav-mobile-menu" id="navMobileMenu">
+  <a href="#how-it-works" class="mobile-nav-link">How It Works</a>
+  <a href="#science" class="mobile-nav-link">Science</a>
+  <a href="#products" class="mobile-nav-link">Products</a>
+  <a href="#about-section" class="mobile-nav-link">About</a>
+  <a href="#buy" class="mobile-nav-link nav-mobile-shop">Shop Now →</a>
+</div>
 
 <!-- ── HERO ────────────────────────────────────────────────── -->
 <section id="hero">

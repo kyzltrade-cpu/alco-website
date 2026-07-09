@@ -1,13 +1,16 @@
-// Custom cursor
-const cursorEl = document.getElementById('cursor');
-document.addEventListener('mousemove', e => {
-  cursorEl.style.left = e.clientX + 'px';
-  cursorEl.style.top = e.clientY + 'px';
-});
-document.querySelectorAll('a, button, [role="button"], label').forEach(el => {
-  el.addEventListener('mouseenter', () => cursorEl.classList.add('expanded'));
-  el.addEventListener('mouseleave', () => cursorEl.classList.remove('expanded'));
-});
+// Hamburger menu
+const hamburger = document.getElementById('navHamburger');
+const mobileMenu = document.getElementById('navMobileMenu');
+if (hamburger && mobileMenu) {
+  function toggleMenu(open) {
+    hamburger.classList.toggle('open', open);
+    mobileMenu.classList.toggle('open', open);
+    hamburger.setAttribute('aria-expanded', String(open));
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  hamburger.addEventListener('click', () => toggleMenu(!hamburger.classList.contains('open')));
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
+}
 
 // Nav transparency on scroll
 const nav = document.getElementById('nav');
