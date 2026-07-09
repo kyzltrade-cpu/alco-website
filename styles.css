@@ -74,9 +74,9 @@ body { font-family: var(--f-body); background: var(--cream); color: var(--black)
 
 /* ── HERO ────────────────────────────────────────────────────────────── */
 #hero {
-  min-height: 100vh; display: flex; align-items: center;
+  height: 100svh; display: flex; align-items: center;
   background: var(--blue); position: relative; overflow: hidden;
-  padding: 120px 80px 80px;
+  padding: clamp(72px, 10vh, 110px) 80px clamp(24px, 4vh, 60px);
 }
 #hero::before {
   content: ''; position: absolute; inset: 0; pointer-events: none;
@@ -89,19 +89,19 @@ body { font-family: var(--f-body); background: var(--cream); color: var(--black)
   font-family: var(--f-disp); font-size: 11px; font-weight: 700;
   letter-spacing: .24em; text-transform: uppercase;
   color: var(--black); background: var(--lime);
-  padding: 5px 14px; border-radius: 999px; margin-bottom: 28px;
+  padding: 5px 14px; border-radius: 999px; margin-bottom: clamp(14px, 2vh, 28px);
 }
 .hero-headline {
-  font-family: var(--f-disp); font-size: clamp(76px, 9.5vw, 124px);
+  font-family: var(--f-disp); font-size: clamp(56px, min(9vw, 14vh), 124px);
   font-weight: 800; text-transform: uppercase; line-height: .88;
-  color: #fff; margin-bottom: 24px;
+  color: #fff; margin-bottom: clamp(12px, 2vh, 24px);
 }
 .hero-headline mark {
   background: var(--lime); color: var(--black);
   padding: 0 6px; -webkit-box-decoration-break: clone;
 }
-.hero-sub { font-size: 15.5px; color: rgba(255,255,255,.68); line-height: 1.65; max-width: 380px; margin-bottom: 40px; }
-.hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 48px; }
+.hero-sub { font-size: 15.5px; color: rgba(255,255,255,.68); line-height: 1.65; max-width: 380px; margin-bottom: clamp(20px, 3vh, 40px); }
+.hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: clamp(20px, 3vh, 48px); }
 .btn {
   font-family: var(--f-disp); font-size: 13px; font-weight: 700;
   text-transform: uppercase; letter-spacing: .14em;
@@ -125,7 +125,9 @@ body { font-family: var(--f-body); background: var(--cream); color: var(--black)
 }
 .hero-visual-ring { display: none; }
 .hero-visual img {
-  width: clamp(220px, 30vw, 380px);
+  width: clamp(200px, 28vw, 380px);
+  max-height: 80svh;
+  object-fit: contain;
   filter: drop-shadow(0 32px 64px rgba(0,0,0,.28));
   animation: float 6s ease-in-out infinite;
   position: relative; z-index: 1;
