@@ -649,19 +649,15 @@ body { font-family: var(--f-body); background: var(--cream); color: var(--black)
   .nav-cta { display: none; }
   .nav-hamburger { display: flex; }
   .nav-links { display: none; }
-  #hero { flex-direction: column; padding: 58px 0 0; gap: 0; height: auto; min-height: 100svh; overflow: visible; align-items: stretch; }
-  .hero-visual { order: -1; padding: 20px 0 0; justify-content: center; align-items: flex-end; }
-  .hero-visual img { width: 58%; max-height: none; }
-  .hero-content { flex: none; padding: 28px 28px 56px; text-align: center; }
-  .hero-tag { margin-bottom: 16px; }
-  .hero-headline { margin-bottom: 14px; }
-  .hero-sub { margin: 0 auto 24px; font-size: 15px; line-height: 1.65; }
-  .hero-ctas { justify-content: center; margin-bottom: 0; }
-  .hero-cta-secondary { display: none; }
-  .hero-trust { display: none; }
+  #hero { flex-direction: column; text-align: center; padding: 80px 24px 72px; gap: 48px; height: auto; overflow: visible; }
+  .hero-visual { padding-top: 12px; }
+  .hero-trust { flex-wrap: wrap; justify-content: center; gap: 4px 10px; }
+  .hero-trust-dot { display: none; }
+  .hero-content { flex: none; }
+  .hero-sub { margin-left: auto; margin-right: auto; }
+  .hero-ctas, .hero-trust { justify-content: center; }
   .hero-badge { display: none; }
-  .hero-star { display: none; }
-  .hero-faces { display: none; }
+  .hero-star { width: 36px; height: 36px; top: 12%; right: 6%; }
   .why-split { grid-template-columns: 1fr; gap: 44px; }
   .step-row { grid-template-columns: 72px 1fr; gap: 20px; padding: 24px 0; }
   .step-row-num { font-size: 56px; }
@@ -687,11 +683,9 @@ body { font-family: var(--f-body); background: var(--cream); color: var(--black)
 @media (max-width: 480px) {
   .hero-headline { font-size: 44px; }
   .sec-headline { font-size: 40px; }
-  #hero { padding: 56px 0 0; }
-  .hero-content { padding: 22px 22px 48px; }
-  .hero-visual img { width: 65%; }
+  #hero { padding: 72px 20px 64px; gap: 36px; }
   .hero-tag { font-size: 10px; }
-  .hero-sub { font-size: 14.5px; }
+  .hero-sub { font-size: 14px; }
   .container { padding: 0 20px; }
   .sec-white, .sec-cream, .sec-lime, .sec-blue, .sec-pink { padding: 60px 0; }
   .products-row { grid-template-columns: 1fr 1fr; padding: 20px 16px 0; gap: 6px; }
