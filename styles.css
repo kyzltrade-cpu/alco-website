@@ -498,6 +498,7 @@ body { font-family: var(--f-body); background: var(--cream); color: var(--black)
 
 /* ── ABOUT SECTION ───────────────────────────────────────────────────── */
 #about-section { padding-bottom: 0; }
+#about-section > .container { text-align: center; }
 .founders-list {
   margin-top: 64px;
   border-top: 1.5px solid rgba(10,10,10,.1);
