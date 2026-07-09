@@ -651,6 +651,7 @@ body { font-family: var(--f-body); background: var(--cream); color: var(--black)
   .nav-links { display: none; }
   #hero { flex-direction: column; text-align: center; padding: 116px 24px 72px; gap: 48px; height: auto; overflow: visible; }
   .hero-visual { padding-top: 12px; }
+  .hero-visual img { width: min(72vw, 320px); }
   .hero-trust { flex-wrap: wrap; justify-content: center; gap: 4px 10px; }
   .hero-trust-dot { display: none; }
   .hero-content { flex: none; }
