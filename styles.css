@@ -646,12 +646,7 @@ body { font-family: var(--f-body); background: var(--cream); color: var(--black)
 }
 @media (max-width: 768px) {
   #nav { padding: 14px 20px; }
-  #nav.scrolled {
-    padding: 10px 20px;
-    left: 10px; right: 10px; top: 8px;
-    border-radius: 18px;
-    box-shadow: 0 8px 28px rgba(10,10,10,.13);
-  }
+  #nav.scrolled { padding: 10px 20px; }
   .nav-logo { font-size: 22px; }
   .nav-right { margin-left: auto; }
   .nav-cta { display: none; }
