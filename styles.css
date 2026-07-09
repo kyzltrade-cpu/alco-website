@@ -222,7 +222,7 @@ body { font-family: var(--f-body); background: var(--cream); color: var(--black)
 .step-row:last-child { border-bottom: 1.5px solid rgba(255,255,255,.18); }
 .step-row-num {
   font-family: var(--f-disp); font-size: clamp(72px, 8vw, 104px);
-  font-weight: 800; color: rgba(0,0,0,.18); line-height: 1;
+  font-weight: 800; color: rgba(255,255,255,.35); line-height: 1;
   display: block; letter-spacing: -.03em;
 }
 .step-row-title {
@@ -230,7 +230,7 @@ body { font-family: var(--f-body); background: var(--cream); color: var(--black)
   font-weight: 800; text-transform: uppercase; color: #fff;
   line-height: .9; margin-bottom: 14px; letter-spacing: -.01em;
 }
-.step-row-desc { font-size: 14px; color: rgba(0,0,0,.5); line-height: 1.75; max-width: 460px; }
+.step-row-desc { font-size: 14px; color: rgba(255,255,255,.72); line-height: 1.75; max-width: 460px; }
 
 /* ── PRODUCTS (white section) ────────────────────────────────────────── */
 .products-row {
