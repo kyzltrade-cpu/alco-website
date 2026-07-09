@@ -283,7 +283,7 @@ body { font-family: var(--f-body); background: var(--cream); color: var(--black)
   align-items: end; margin-top: 32px;
 }
 .why-headline {
-  font-family: var(--f-disp); font-size: clamp(44px, 5.2vw, 76px);
+  font-family: var(--f-disp); font-size: clamp(50px, 5.8vw, 84px);
   font-weight: 800; text-transform: uppercase; line-height: .9;
   letter-spacing: -.02em; color: var(--black); margin: 0;
 }
@@ -292,7 +292,7 @@ body { font-family: var(--f-body); background: var(--cream); color: var(--black)
 .why-crossouts { display: flex; flex-direction: column; gap: 3px; }
 .why-cross {
   display: block;
-  font-family: var(--f-disp); font-size: clamp(16px, 1.8vw, 22px);
+  font-family: var(--f-disp); font-size: clamp(18px, 2vw, 26px);
   font-weight: 600; text-transform: uppercase; line-height: 1.45;
   letter-spacing: .01em; color: rgba(10,10,10,.28);
   text-decoration: line-through;
@@ -301,7 +301,7 @@ body { font-family: var(--f-body); background: var(--cream); color: var(--black)
 .why-crossouts .why-cross:nth-child(2) { transition-delay: .08s; }
 .why-crossouts .why-cross:nth-child(3) { transition-delay: .16s; }
 .why-close {
-  font-family: var(--f-disp); font-size: clamp(15px, 1.5vw, 19px);
+  font-family: var(--f-disp); font-size: clamp(16px, 1.6vw, 21px);
   font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
   color: var(--blue); line-height: 1;
 }
