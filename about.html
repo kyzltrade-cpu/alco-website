@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — alco.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@900&family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body { background: var(--cream); }
+
+    .about-nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 52px;
+      background: rgba(237,228,198,.92); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(10,10,10,.07);
+    }
+    .about-nav-logo { font-family: var(--f-logo); font-size: 24px; color: var(--black); }
+    .about-nav-back {
+      font-family: var(--f-disp); font-size: 11px; font-weight: 700;
+      letter-spacing: .14em; text-transform: uppercase; color: rgba(10,10,10,.45); transition: color .18s;
+    }
+    .about-nav-back:hover { color: var(--black); }
+    .about-nav-cta {
+      font-family: var(--f-disp); font-size: 11.5px; font-weight: 700;
+      letter-spacing: .14em; text-transform: uppercase;
+      padding: 9px 22px; border-radius: 999px;
+      background: var(--blue); color: #fff; transition: background .18s;
+    }
+    .about-nav-cta:hover { background: #4459C2; }
+
+    /* HERO */
+    .about-hero {
+      background: var(--blue); padding: 100px 52px 90px; text-align: center; position: relative; overflow: hidden;
+    }
+    .about-hero::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background-image: radial-gradient(rgba(237,228,198,.13) 1.5px, transparent 1.5px);
+      background-size: 36px 36px;
+    }
+    .about-eyebrow {
+      font-family: var(--f-disp); font-size: 10px; font-weight: 700;
+      letter-spacing: .3em; text-transform: uppercase; color: rgba(255,255,255,.5);
+      display: block; margin-bottom: 20px;
+    }
+    .about-hero-hl {
+      font-family: var(--f-disp); font-size: clamp(64px, 8vw, 110px);
+      font-weight: 800; text-transform: uppercase; line-height: .88;
+      color: #fff; margin-bottom: 28px; position: relative; z-index: 1;
+    }
+    .about-hero-hl mark {
+      background: var(--lime); color: var(--black); padding: 0 8px;
+    }
+    .about-hero-sub {
+      font-size: 15px; color: rgba(255,255,255,.62); max-width: 520px;
+      margin: 0 auto; line-height: 1.75; position: relative; z-index: 1;
+    }
+
+    /* STORY */
+    .about-story { max-width: 720px; margin: 0 auto; padding: 100px 52px; }
+    .story-eyebrow {
+      font-family: var(--f-disp); font-size: 10px; font-weight: 700;
+      letter-spacing: .3em; text-transform: uppercase; color: var(--blue);
+      display: block; margin-bottom: 20px;
+    }
+    .story-hl {
+      font-family: var(--f-disp); font-size: clamp(40px, 4.5vw, 60px);
+      font-weight: 800; text-transform: uppercase; line-height: .92;
+      color: var(--black); margin-bottom: 36px;
+    }
+    .story-p { font-size: 15px; color: rgba(10,10,10,.62); line-height: 1.85; margin-bottom: 20px; }
+    .story-divider { height: 1px; background: rgba(10,10,10,.08); margin: 48px 0; }
+
+    /* FOUNDERS */
+    .founders-section { background: #fff; padding: 100px 52px; }
+    .founders-inner { max-width: 1100px; margin: 0 auto; }
+    .founders-eyebrow {
+      font-family: var(--f-disp); font-size: 10px; font-weight: 700;
+      letter-spacing: .3em; text-transform: uppercase; color: rgba(10,10,10,.35);
+      display: block; margin-bottom: 16px;
+    }
+    .founders-hl {
+      font-family: var(--f-disp); font-size: clamp(44px, 5vw, 64px);
+      font-weight: 800; text-transform: uppercase; line-height: .9;
+      color: var(--black); margin-bottom: 64px;
+    }
+    .founders-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .founder-card { }
+    .founder-av {
+      width: 100%; aspect-ratio: 1; border-radius: 20px; margin-bottom: 20px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--f-disp); font-size: 64px; font-weight: 800; color: #fff;
+    }
+    .founder-av--kyle   { background: var(--blue); }
+    .founder-av--will   { background: var(--orange); }
+    .founder-av--randev { background: var(--black); }
+    .founder-initial { line-height: 1; }
+    .founder-name {
+      font-family: var(--f-disp); font-size: 26px; font-weight: 800;
+      text-transform: uppercase; letter-spacing: .04em; color: var(--black);
+      margin-bottom: 4px;
+    }
+    .founder-role {
+      font-family: var(--f-disp); font-size: 10px; font-weight: 700;
+      letter-spacing: .22em; text-transform: uppercase; color: rgba(10,10,10,.35);
+      margin-bottom: 16px; display: block;
+    }
+    .founder-bio { font-size: 13.5px; color: rgba(10,10,10,.58); line-height: 1.78; }
+
+    /* VALUES */
+    .values-section { background: var(--cream); padding: 100px 52px; }
+    .values-inner { max-width: 1100px; margin: 0 auto; }
+    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 52px; }
+    .value-card {
+      background: #fff; border-radius: 20px; padding: 36px 28px;
+      border: 1.5px solid rgba(10,10,10,.06);
+    }
+    .value-num {
+      font-family: var(--f-disp); font-size: 48px; font-weight: 800;
+      color: rgba(10,10,10,.06); line-height: 1; margin-bottom: 12px;
+    }
+    .value-title {
+      font-family: var(--f-disp); font-size: 20px; font-weight: 800;
+      text-transform: uppercase; color: var(--black); margin-bottom: 10px;
+    }
+    .value-desc { font-size: 13px; color: rgba(10,10,10,.52); line-height: 1.75; }
+
+    /* CTA */
+    .about-cta { background: var(--lime); padding: 100px 52px; text-align: center; }
+    .about-cta-hl {
+      font-family: var(--f-disp); font-size: clamp(52px, 6vw, 80px);
+      font-weight: 800; text-transform: uppercase; color: var(--black);
+      line-height: .9; margin-bottom: 36px;
+    }
+    .about-cta-btn {
+      font-family: var(--f-disp); font-size: 13px; font-weight: 700;
+      letter-spacing: .14em; text-transform: uppercase;
+      padding: 16px 36px; border-radius: 999px;
+      background: var(--black); color: var(--lime);
+      display: inline-block; transition: all .18s;
+    }
+    .about-cta-btn:hover { background: #222; transform: scale(1.02); }
+
+    @media (max-width: 768px) {
+      .about-nav { padding: 14px 22px; }
+      .about-hero { padding: 80px 28px 70px; }
+      .about-story { padding: 60px 28px; }
+      .founders-section, .values-section, .about-cta { padding: 70px 28px; }
+      .founders-grid, .values-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="about-nav">
+  <a href="index.html" class="about-nav-back">← Home</a>
+  <a href="index.html" class="about-nav-logo">alco.</a>
+  <a href="shop.html" class="about-nav-cta">Shop Now →</a>
+</nav>
+
+<!-- HERO -->
+<section class="about-hero">
+  <span class="about-eyebrow">Our Story</span>
+  <h1 class="about-hero-hl">BUILT BY<br>PEOPLE WHO<br><mark>SHOW UP.</mark></h1>
+  <p class="about-hero-sub">Three mates who got tired of choosing between a good night and a good morning.</p>
+</section>
+
+<!-- STORY -->
+<div class="about-story">
+  <span class="story-eyebrow">How It Started</span>
+  <h2 class="story-hl">THE MORNING<br>AFTER PROBLEM.</h2>
+  <p class="story-p">We weren't trying to build a supplements company. We were just tired of the trade-off — the one where you either skip the birthday dinner, the client drinks, the Saturday out with friends, or you pay for it the next day.</p>
+  <p class="story-p">Kyle, Will, and Randev had all read the research on DHM. They'd seen it work in Korean hangover recovery drinks. But nothing existed that actually fit the way people lived — something small enough to carry anywhere, fast enough to take in the moment, and effective enough to actually matter the next morning.</p>
+  <p class="story-p">So they built alco. A 15ml jelly stick. Peach plum. DHM 200mg. No faff. For people who want to live fully without sacrificing the next day.</p>
+  <div class="story-divider"></div>
+  <p class="story-p" style="font-size:13px;color:rgba(10,10,10,.38);">Sydney, Australia · 2024</p>
+</div>
+
+<!-- FOUNDERS -->
+<section class="founders-section">
+  <div class="founders-inner">
+    <span class="founders-eyebrow">The Team</span>
+    <h2 class="founders-hl">THE THREE<br>BEHIND IT.</h2>
+    <div class="founders-grid">
+
+      <div class="founder-card">
+        <div class="founder-av founder-av--kyle">
+          <span class="founder-initial">K</span>
+        </div>
+        <div class="founder-name">Kyle</div>
+        <span class="founder-role">Co-Founder</span>
+        <p class="founder-bio">Kyle brings the brand and product vision. He's the reason alco. looks the way it does and says what it says — sharp, direct, no filler.</p>
+      </div>
+
+      <div class="founder-card">
+        <div class="founder-av founder-av--will">
+          <span class="founder-initial">W</span>
+        </div>
+        <div class="founder-name">Will</div>
+        <span class="founder-role">Co-Founder</span>
+        <p class="founder-bio">Will runs operations and commercial. He makes sure every carton ships on time and every partnership makes sense for the business.</p>
+      </div>
+
+      <div class="founder-card">
+        <div class="founder-av founder-av--randev">
+          <span class="founder-initial">R</span>
+        </div>
+        <div class="founder-name">Randev</div>
+        <span class="founder-role">Co-Founder</span>
+        <p class="founder-bio">Randev leads product and formulation. He's the one who obsessed over the DHM research until the formula was exactly right.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values-section">
+  <div class="values-inner">
+    <span class="founders-eyebrow">What We Stand For</span>
+    <h2 class="founders-hl">HOW WE<br>OPERATE.</h2>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-num">01</div>
+        <div class="value-title">No compromise</div>
+        <p class="value-desc">You shouldn't have to choose between living your life and showing up the next day. alco. exists so you don't have to.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num">02</div>
+        <div class="value-title">Science first</div>
+        <p class="value-desc">DHM has 20+ years of use and a 2023 USC human trial behind it. We don't make claims we can't back with evidence.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num">03</div>
+        <div class="value-title">Built to fit</div>
+        <p class="value-desc">15ml. Goes anywhere. Takes two seconds. Designed for real nights out, not a supplement shelf at home.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="about-cta">
+  <h2 class="about-cta-hl">READY TO<br>SHOW UP?</h2>
+  <a href="shop.html" class="about-cta-btn">Shop alco. →</a>
+</div>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="footer-logo">alco.</div>
+  <p class="footer-tagline">Tomorrow Starts Tonight.</p>
+  <nav class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="shop.html">Shop</a>
+  </nav>
+  <p class="footer-copy">© 2026 alco. Pty Ltd · Sydney, Australia</p>
+</footer>
+
+</body>
+</html>
