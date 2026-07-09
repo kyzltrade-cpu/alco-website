@@ -1,4 +1,4 @@
-// Hamburger menu — iOS-safe scroll lock
+// Hamburger menu with iOS-safe scroll lock
 const hamburger = document.getElementById('navHamburger');
 const mobileMenu = document.getElementById('navMobileMenu');
 if (hamburger && mobileMenu) {
