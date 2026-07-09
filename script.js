@@ -42,6 +42,33 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal, .step, .step-row, .product-card, .proof-card, .buy-card, .persona-panel, .persona-row, .founder-tile')
   .forEach(el => observer.observe(el));
 
+// Stat counter animation
+function animateCount(el) {
+  const to = parseInt(el.dataset.to, 10);
+  const from = parseInt(el.dataset.from || '0', 10);
+  const duration = 1500;
+  const startTime = performance.now();
+  function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+  function tick(now) {
+    const t = Math.min((now - startTime) / duration, 1);
+    el.textContent = Math.round(from + (to - from) * easeOutCubic(t));
+    if (t < 1) requestAnimationFrame(tick);
+    else el.textContent = to;
+  }
+  requestAnimationFrame(tick);
+}
+
+const statsEl = document.querySelector('.science-stats');
+if (statsEl) {
+  const statsObserver = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      document.querySelectorAll('.count-up').forEach(animateCount);
+      statsObserver.disconnect();
+    }
+  }, { threshold: 0.4 });
+  statsObserver.observe(statsEl);
+}
+
 // Smooth nav links
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
