@@ -40,8 +40,14 @@ body { font-family: var(--f-body); background: var(--cream); color: var(--black)
 .nav-logo {
   font-family: var(--f-logo); font-size: 26px; color: #fff; letter-spacing: -.02em;
   transition: font-size .35s ease, color .35s ease;
+  display: flex; align-items: center;
+}
+.nav-logo-img {
+  height: 40px; width: auto; display: block;
+  transition: height .35s ease;
 }
 #nav.scrolled .nav-logo { font-size: 22px; color: var(--black); }
+#nav.scrolled .nav-logo-img { height: 34px; }
 .nav-links { display: flex; list-style: none; gap: 40px; }
 .nav-links a { font-size: 12.5px; font-weight: 500; color: rgba(255,255,255,.8); letter-spacing: .05em; transition: color .18s; }
 .nav-links a:hover { color: #fff; }
