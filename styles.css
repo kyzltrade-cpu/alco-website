@@ -408,20 +408,20 @@ body { font-family: var(--f-body); background: var(--cream); color: var(--black)
 .pullquote-text {
   font-family: var(--f-disp); font-size: clamp(52px, 7vw, 104px);
   font-weight: 800; text-transform: uppercase; line-height: .88;
-  letter-spacing: -.03em; color: var(--black);
+  letter-spacing: -.03em; color: var(--lime);
   border-left: 4px solid var(--lime); padding-left: 28px;
 }
 .pullquote-attr {
   display: flex; align-items: center; gap: 16px;
   margin-top: 36px; padding-top: 24px;
-  border-top: 1.5px solid rgba(10,10,10,.1);
+  border-top: 1px solid rgba(255,255,255,.12);
   margin-left: 32px;
 }
 .pullquote-name {
   font-family: var(--f-disp); font-size: 11px; font-weight: 700;
-  letter-spacing: .2em; text-transform: uppercase; color: var(--black);
+  letter-spacing: .2em; text-transform: uppercase; color: #fff;
 }
-.pullquote-role { font-size: 11px; color: rgba(10,10,10,.38); }
+.pullquote-role { font-size: 11px; color: rgba(255,255,255,.32); }
 
 /* ── BUY (lime section) ──────────────────────────────────────────────── */
 .sec-black-buy { background: var(--lime); padding: 110px 0; position: relative; overflow: hidden; }
