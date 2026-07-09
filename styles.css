@@ -301,6 +301,11 @@ body { font-family: var(--f-body); background: var(--cream); color: var(--black)
   line-height: .9; margin-bottom: 14px; letter-spacing: -.01em;
 }
 .step-row-desc { font-size: 14px; color: rgba(255,255,255,.72); line-height: 1.75; max-width: 460px; }
+.hiw-lime .step-row { border-top-color: rgba(0,0,0,.12); }
+.hiw-lime .step-row:last-child { border-bottom-color: rgba(0,0,0,.12); }
+.hiw-lime .step-row-num { color: rgba(0,0,0,.2); }
+.hiw-lime .step-row-title { color: var(--black); }
+.hiw-lime .step-row-desc { color: rgba(0,0,0,.58); }
 
 /* ── PRODUCTS (white section) ────────────────────────────────────────── */
 .products-row {
