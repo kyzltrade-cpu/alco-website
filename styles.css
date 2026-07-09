@@ -264,7 +264,7 @@ body { font-family: var(--f-body); background: var(--cream); color: var(--black)
 .reveal.in { opacity: 1; transform: translateY(0); }
 
 /* ── WHY ─────────────────────────────────────────────────────────────── */
-#why { position: relative; padding-top: 80px; padding-bottom: 140px; }
+#why { position: relative; padding-top: 90px; padding-bottom: 150px; }
 #why::after {
   content: ''; position: absolute; bottom: 0; left: 0; right: 0;
   height: 80px; background: var(--lime);
@@ -275,7 +275,7 @@ body { font-family: var(--f-body); background: var(--cream); color: var(--black)
   align-items: end; margin-top: 32px;
 }
 .why-headline {
-  font-family: var(--f-disp); font-size: clamp(36px, 4.2vw, 60px);
+  font-family: var(--f-disp); font-size: clamp(44px, 5.2vw, 76px);
   font-weight: 800; text-transform: uppercase; line-height: .9;
   letter-spacing: -.02em; color: var(--black); margin: 0;
 }
@@ -283,7 +283,7 @@ body { font-family: var(--f-body); background: var(--cream); color: var(--black)
 .why-crossouts { display: flex; flex-direction: column; gap: 3px; }
 .why-cross {
   display: block;
-  font-family: var(--f-disp); font-size: clamp(14px, 1.5vw, 18px);
+  font-family: var(--f-disp); font-size: clamp(16px, 1.8vw, 22px);
   font-weight: 600; text-transform: uppercase; line-height: 1.45;
   letter-spacing: .01em; color: rgba(10,10,10,.28);
   text-decoration: line-through;
@@ -292,7 +292,7 @@ body { font-family: var(--f-body); background: var(--cream); color: var(--black)
 .why-crossouts .why-cross:nth-child(2) { transition-delay: .08s; }
 .why-crossouts .why-cross:nth-child(3) { transition-delay: .16s; }
 .why-close {
-  font-family: var(--f-disp); font-size: clamp(13px, 1.3vw, 16px);
+  font-family: var(--f-disp); font-size: clamp(15px, 1.5vw, 19px);
   font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
   color: var(--blue); line-height: 1;
 }
@@ -696,9 +696,9 @@ body { font-family: var(--f-body); background: var(--cream); color: var(--black)
   #why { padding-top: 60px; padding-bottom: 110px; }
   #why::after { height: 50px; }
   .why-inner { grid-template-columns: 1fr; gap: 28px; margin-top: 24px; }
-  .why-headline { font-size: 36px; }
-  .why-cross { font-size: 13px; }
-  .why-close { font-size: 12px; }
+  .why-headline { font-size: 44px; }
+  .why-cross { font-size: 15px; }
+  .why-close { font-size: 13px; }
   .step-row { grid-template-columns: 72px 1fr; gap: 20px; padding: 24px 0; }
   .step-row-num { font-size: 56px; }
   .products-row { grid-template-columns: 1fr 1fr; padding: 28px 22px 0; gap: 8px; }
