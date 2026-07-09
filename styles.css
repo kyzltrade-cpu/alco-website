@@ -35,12 +35,11 @@ body { font-family: var(--f-body); background: var(--cream); color: var(--black)
   border-color: rgba(10,10,10,.08);
   padding: 10px 56px;
 }
-.nav-logo { position: relative; display: block; height: 32px; width: auto; }
-.nav-logo-img { height: 32px; width: auto; transition: opacity .35s ease; }
-.nav-logo-light { opacity: 1; display: block; }
-.nav-logo-dark  { opacity: 0; position: absolute; top: 0; left: 0; }
-#nav.scrolled .nav-logo-light { opacity: 0; }
-#nav.scrolled .nav-logo-dark  { opacity: 1; }
+.nav-logo {
+  font-family: var(--f-logo); font-size: 26px; color: #fff; letter-spacing: -.02em;
+  transition: font-size .35s ease, color .35s ease;
+}
+#nav.scrolled .nav-logo { font-size: 22px; color: var(--black); }
 .nav-links { display: flex; list-style: none; gap: 40px; }
 .nav-links a { font-size: 12.5px; font-weight: 500; color: rgba(255,255,255,.8); letter-spacing: .05em; transition: color .18s; }
 .nav-links a:hover { color: #fff; }
