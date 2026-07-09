@@ -705,6 +705,8 @@ body { font-family: var(--f-body); background: var(--cream); color: var(--black)
   .why-headline { font-size: 44px; }
   .why-cross { font-size: 15px; }
   .why-close { font-size: 13px; }
+  .why-right.reveal { transform: translate(-36px, 16px); }
+  .why-headline-wrap.reveal { transform: translate(36px, 16px); transition-delay: .18s; }
   .step-row { grid-template-columns: 72px 1fr; gap: 20px; padding: 24px 0; }
   .step-row-num { font-size: 56px; }
   .products-row { grid-template-columns: 1fr 1fr; padding: 28px 22px 0; gap: 8px; }
