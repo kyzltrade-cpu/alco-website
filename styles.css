@@ -18,7 +18,7 @@ html::-webkit-scrollbar { display: none; }
   --f-body: 'Inter', sans-serif;
 }
 
-html { background: #fff; }
+html { background: var(--cream); }
 body { font-family: var(--f-body); background: var(--cream); color: var(--black); overflow-x: hidden; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 52px; }
 
