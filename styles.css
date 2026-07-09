@@ -84,7 +84,7 @@ body { font-family: var(--f-body); background: var(--cream); color: var(--black)
   padding: 0 6px; -webkit-box-decoration-break: clone;
 }
 .hero-sub { font-size: 15.5px; color: rgba(255,255,255,.68); line-height: 1.65; max-width: 380px; margin-bottom: 40px; }
-.hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 48px; }
+.hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
 .btn {
   font-family: var(--f-disp); font-size: 13px; font-weight: 700;
   text-transform: uppercase; letter-spacing: .14em;
