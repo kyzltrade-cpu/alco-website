@@ -1,12 +1,23 @@
-// Hamburger menu
+// Hamburger menu — iOS-safe scroll lock
 const hamburger = document.getElementById('navHamburger');
 const mobileMenu = document.getElementById('navMobileMenu');
 if (hamburger && mobileMenu) {
+  let savedScroll = 0;
   function toggleMenu(open) {
     hamburger.classList.toggle('open', open);
     mobileMenu.classList.toggle('open', open);
     hamburger.setAttribute('aria-expanded', String(open));
-    document.body.style.overflow = open ? 'hidden' : '';
+    if (open) {
+      savedScroll = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${savedScroll}px`;
+      document.body.style.width = '100%';
+    } else {
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      window.scrollTo(0, savedScroll);
+    }
   }
   hamburger.addEventListener('click', () => toggleMenu(!hamburger.classList.contains('open')));
   mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleMenu(false)));

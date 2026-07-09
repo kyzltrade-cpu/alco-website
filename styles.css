@@ -78,7 +78,7 @@ body { font-family: var(--f-body); background: var(--cream); color: var(--black)
 /* ── MOBILE MENU ─────────────────────────────────────────────────────── */
 .nav-mobile-menu {
   position: fixed; inset: 0; z-index: 998;
-  background: var(--cream);
+  background: #fff;
   display: flex; flex-direction: column;
   opacity: 0; pointer-events: none;
   transform: translateY(6px);
@@ -86,22 +86,9 @@ body { font-family: var(--f-body); background: var(--cream); color: var(--black)
 }
 .nav-mobile-menu.open { opacity: 1; pointer-events: all; transform: translateY(0); }
 
-.mmenu-top {
-  display: flex; align-items: baseline; justify-content: space-between;
-  padding: 20px 28px;
-  border-bottom: 1.5px solid rgba(10,10,10,.1);
-}
-.mmenu-brand {
-  font-family: var(--f-logo); font-size: 26px; color: var(--black);
-}
-.mmenu-eyebrow {
-  font-family: var(--f-disp); font-size: 9px; font-weight: 700;
-  letter-spacing: .22em; text-transform: uppercase; color: rgba(10,10,10,.32);
-}
-
 .mmenu-nav {
-  flex: 1; display: flex; flex-direction: column; justify-content: center;
-  padding: 0 28px;
+  flex: 1; display: flex; flex-direction: column; justify-content: flex-start;
+  padding: 72px 28px 0;
 }
 .mmenu-link {
   display: flex; align-items: center; gap: 18px;
