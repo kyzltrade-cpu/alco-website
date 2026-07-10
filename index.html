@@ -14,11 +14,98 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@900&family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Page-scoped override for index.html only, not shared styles.css */
+    /* Page-scoped overrides for index.html only, not shared styles.css */
     #why .why-cross {
       font-weight: 500;
       color: rgba(10,10,10,.32);
       text-decoration-color: rgba(10,10,10,.22);
+    }
+
+    /* ── HERO REDESIGN (index.html only) ──────────────────────── */
+    #hero.hero-v2 {
+      display: block; height: auto;
+      background: var(--blue); position: relative; overflow: hidden; padding: 0;
+    }
+    #hero.hero-v2::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background-image: radial-gradient(rgba(237,228,198,.14) 1.5px, transparent 1.5px);
+      background-size: 36px 36px;
+    }
+    #hero.hero-v2 .hero-v2-top {
+      position: relative; z-index: 1; max-width: 1280px; margin: 0 auto;
+      padding: clamp(120px, 16vh, 172px) 56px 72px;
+    }
+    #hero.hero-v2 .hero-v2-grid {
+      display: grid; grid-template-columns: 1.2fr .8fr; gap: 48px; align-items: center;
+    }
+    #hero.hero-v2 .hero-v2-eyebrow {
+      display: block; font-family: var(--f-disp); font-size: 11px; font-weight: 700;
+      letter-spacing: .3em; text-transform: uppercase; color: var(--lime); margin-bottom: 22px;
+    }
+    #hero.hero-v2 .hero-v2-headline {
+      font-family: var(--f-disp); font-size: clamp(60px, 7.2vw, 128px);
+      font-weight: 800; text-transform: uppercase; line-height: .86;
+      letter-spacing: -.01em; color: #fff; margin-bottom: 26px;
+    }
+    #hero.hero-v2 .hero-v2-headline mark {
+      background: var(--lime); color: var(--black); padding: 0 8px;
+      -webkit-box-decoration-break: clone;
+    }
+    #hero.hero-v2 .hero-v2-sub {
+      font-size: 16px; color: rgba(255,255,255,.66); line-height: 1.7;
+      max-width: 420px; margin-bottom: 32px;
+    }
+    #hero.hero-v2 .hero-v2-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 26px; }
+    #hero.hero-v2 .hero-v2-note {
+      font-size: 12.5px; color: rgba(255,255,255,.42); line-height: 1.6; max-width: 380px;
+    }
+    #hero.hero-v2 .hero-v2-note strong { color: rgba(255,255,255,.78); font-weight: 600; }
+
+    #hero.hero-v2 .hero-v2-visual { position: relative; display: flex; justify-content: center; align-items: center; }
+    #hero.hero-v2 .hero-v2-glow {
+      position: absolute; width: 300px; height: 300px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(196,224,24,.32), transparent 70%);
+    }
+    #hero.hero-v2 .hero-v2-img {
+      position: relative; z-index: 1; width: clamp(220px, 25vw, 400px);
+      filter: drop-shadow(0 36px 56px rgba(0,0,0,.32));
+      animation: heroV2Float 6s ease-in-out infinite;
+    }
+    @keyframes heroV2Float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-16px); } }
+
+    #hero.hero-v2 .hero-v2-specs {
+      position: relative; z-index: 1; background: var(--black);
+      display: grid; grid-template-columns: repeat(4, 1fr);
+    }
+    #hero.hero-v2 .hero-v2-spec {
+      padding: 22px 28px; border-left: 1px solid rgba(255,255,255,.12);
+      display: flex; align-items: baseline; gap: 10px;
+    }
+    #hero.hero-v2 .hero-v2-spec:first-child { border-left: none; }
+    #hero.hero-v2 .hero-v2-spec-val { font-family: var(--f-disp); font-size: 21px; font-weight: 800; color: #fff; }
+    #hero.hero-v2 .hero-v2-spec-lbl { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.4); }
+
+    #hero.hero-v2 .hero-v2-content > * { opacity: 0; animation: heroV2In .75s ease forwards; }
+    #hero.hero-v2 .hero-v2-content > *:nth-child(1) { animation-delay: .1s; }
+    #hero.hero-v2 .hero-v2-content > *:nth-child(2) { animation-delay: .22s; }
+    #hero.hero-v2 .hero-v2-content > *:nth-child(3) { animation-delay: .36s; }
+    #hero.hero-v2 .hero-v2-content > *:nth-child(4) { animation-delay: .48s; }
+    #hero.hero-v2 .hero-v2-content > *:nth-child(5) { animation-delay: .58s; }
+    #hero.hero-v2 .hero-v2-visual { opacity: 0; animation: heroV2In .9s ease .3s forwards; }
+    @keyframes heroV2In { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+    @media (max-width: 900px) {
+      #hero.hero-v2 .hero-v2-grid { grid-template-columns: 1fr; }
+      #hero.hero-v2 .hero-v2-visual { margin-top: 36px; }
+      #hero.hero-v2 .hero-v2-specs { grid-template-columns: repeat(2, 1fr); }
+      #hero.hero-v2 .hero-v2-spec:nth-child(2n+1) { border-left: none; }
+      #hero.hero-v2 .hero-v2-spec:nth-child(n+3) { border-top: 1px solid rgba(255,255,255,.12); }
+    }
+    @media (max-width: 640px) {
+      #hero.hero-v2 .hero-v2-top { padding: 108px 22px 48px; }
+      #hero.hero-v2 .hero-v2-headline { font-size: 46px; }
+      #hero.hero-v2 .hero-v2-sub { font-size: 14.5px; }
+      #hero.hero-v2 .hero-v2-img { width: min(60vw, 260px); }
     }
   </style>
 </head>
@@ -66,28 +153,30 @@
 </div>
 
 <!-- ── HERO ────────────────────────────────────────────────── -->
-<section id="hero">
-  <div class="hero-content">
-    <span class="hero-tag">Performance Recovery · DHM 200mg</span>
-    <h1 class="hero-headline">TOMORROW<br><mark>STARTS</mark><br>TONIGHT.</h1>
-    <p class="hero-sub">A 15ml recovery stick with a proven 200mg dose of DHM. Take one before you sleep, wake up clear and ready to perform. For people whose mornings can't afford to lose to their nights.</p>
-    <div class="hero-ctas">
-      <a href="shop.html" class="btn btn-lime">Shop the Range</a>
-      <a href="#science" class="btn btn-white-ghost">See the Science</a>
+<section id="hero" class="hero-v2">
+  <div class="hero-v2-top">
+    <div class="hero-v2-grid">
+      <div class="hero-v2-content">
+        <span class="hero-v2-eyebrow">Performance Recovery · DHM 200mg</span>
+        <h1 class="hero-v2-headline">TOMORROW<br><mark>STARTS</mark><br>TONIGHT.</h1>
+        <p class="hero-v2-sub">A 15ml recovery stick with a proven 200mg dose of DHM. Take one before you sleep, wake up clear and ready to perform. For people whose mornings can't afford to lose to their nights.</p>
+        <div class="hero-v2-ctas">
+          <a href="shop.html" class="btn btn-lime">Shop the Range</a>
+          <a href="#science" class="btn btn-white-ghost">See the Science</a>
+        </div>
+        <p class="hero-v2-note">Built for <strong>founders</strong>, <strong>athletes</strong>, and <strong>executives</strong> who don't slow down.</p>
+      </div>
+      <div class="hero-v2-visual">
+        <div class="hero-v2-glow"></div>
+        <img class="hero-v2-img" src="images/alco-blue.png" alt="alco. cobalt anti hangover jelly stick">
+      </div>
     </div>
-    <div class="hero-trust">
-      <span>DHM 200mg</span>
-      <span class="hero-trust-dot">·</span>
-      <span>Ships AU-wide</span>
-      <span class="hero-trust-dot">·</span>
-      <span>15ml format</span>
-      <span class="hero-trust-dot">·</span>
-      <span>12-stick carton</span>
-    </div>
-    <p class="faces-text" style="margin-top:22px; animation-delay:.7s;">Built for <strong>founders</strong>, <strong>athletes</strong>, and <strong>executives</strong> who don't slow down.</p>
   </div>
-  <div class="hero-visual">
-    <img src="images/alco-blue.png" alt="alco. cobalt anti hangover jelly stick">
+  <div class="hero-v2-specs">
+    <div class="hero-v2-spec"><span class="hero-v2-spec-val">200mg</span><span class="hero-v2-spec-lbl">DHM Dose</span></div>
+    <div class="hero-v2-spec"><span class="hero-v2-spec-val">15ml</span><span class="hero-v2-spec-lbl">Per Stick</span></div>
+    <div class="hero-v2-spec"><span class="hero-v2-spec-val">12</span><span class="hero-v2-spec-lbl">Stick Carton</span></div>
+    <div class="hero-v2-spec"><span class="hero-v2-spec-val">AU</span><span class="hero-v2-spec-lbl">Ships Nationwide</span></div>
   </div>
 </section>
 
