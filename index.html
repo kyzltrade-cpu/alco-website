@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#ffffff">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <title>alco. | Tomorrow Starts Tonight.</title>
-  <meta name="description" content="A proven 200mg dose of DHM recovery in a 15ml stick. Built for people whose mornings can't afford to lose to their nights. Ships Australia-wide.">
+  <meta name="description" content="The 15ml anti hangover jelly stick. DHM 200mg. Ships Australia-wide.">
   <link rel="icon" type="image/png" href="images/logo-sun.png">
   <link rel="apple-touch-icon" href="images/logo-sun.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,133 +19,6 @@
       font-weight: 500;
       color: rgba(10,10,10,.32);
       text-decoration-color: rgba(10,10,10,.22);
-    }
-
-    /* ── HERO REDESIGN v3 (index.html only) ────────────────────── */
-    #hero.hero-v3 {
-      display: block; height: auto;
-      background: var(--blue); position: relative; overflow: hidden; padding: 0;
-    }
-    #hero.hero-v3::before {
-      content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 0;
-      background-image: radial-gradient(rgba(237,228,198,.14) 1.5px, transparent 1.5px);
-      background-size: 36px 36px;
-    }
-    #hero.hero-v3 .hero-v3-ghost {
-      position: absolute; top: 4%; right: -3%; z-index: 0;
-      font-family: var(--f-logo); font-weight: 900;
-      font-size: clamp(220px, 32vw, 600px); line-height: 1;
-      color: rgba(255,255,255,.055); white-space: nowrap; user-select: none; pointer-events: none;
-    }
-    #hero.hero-v3 .hero-v3-ribbon {
-      position: absolute; top: 118px; right: -92px; z-index: 4;
-      width: 340px; transform: rotate(8deg);
-      background: var(--lime); overflow: hidden; padding: 7px 0;
-      box-shadow: 0 10px 24px rgba(0,0,0,.22);
-    }
-    #hero.hero-v3 .hero-v3-ribbon-track {
-      display: inline-flex; gap: 14px; white-space: nowrap;
-      animation: heroV3Ribbon 12s linear infinite;
-    }
-    #hero.hero-v3 .hero-v3-ribbon-track span {
-      font-family: var(--f-disp); font-size: 11px; font-weight: 700;
-      letter-spacing: .14em; text-transform: uppercase; color: var(--black);
-    }
-    #hero.hero-v3 .hero-v3-ribbon-dot { color: rgba(10,10,10,.4); }
-    @keyframes heroV3Ribbon { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
-    #hero.hero-v3 .hero-v3-top {
-      position: relative; z-index: 2; max-width: 1280px; margin: 0 auto;
-      padding: clamp(128px, 17vh, 176px) 56px 0;
-    }
-    #hero.hero-v3 .hero-v3-eyebrow {
-      display: block; font-family: var(--f-disp); font-size: 11px; font-weight: 700;
-      letter-spacing: .3em; text-transform: uppercase; color: var(--lime); margin-bottom: 20px;
-    }
-    #hero.hero-v3 .hero-v3-headline {
-      font-family: var(--f-disp); font-size: clamp(64px, 9.5vw, 168px);
-      font-weight: 800; text-transform: uppercase; line-height: .84;
-      letter-spacing: -.015em; color: #fff;
-    }
-    #hero.hero-v3 .hero-v3-headline mark {
-      background: var(--lime); color: var(--black); padding: 0 10px;
-      -webkit-box-decoration-break: clone;
-    }
-
-    #hero.hero-v3 .hero-v3-mid {
-      position: relative; z-index: 2; max-width: 1280px; margin: 0 auto;
-      padding: 40px 56px 64px;
-      display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 40px;
-    }
-    #hero.hero-v3 .hero-v3-sub {
-      font-size: 16px; color: rgba(255,255,255,.66); line-height: 1.7;
-      max-width: 440px; margin-bottom: 28px;
-    }
-    #hero.hero-v3 .hero-v3-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 22px; }
-    #hero.hero-v3 .hero-v3-note {
-      font-size: 12.5px; color: rgba(255,255,255,.42); line-height: 1.6; max-width: 420px;
-    }
-    #hero.hero-v3 .hero-v3-note strong { color: rgba(255,255,255,.78); font-weight: 600; }
-
-    #hero.hero-v3 .hero-v3-visual { position: relative; display: flex; justify-content: center; align-items: center; }
-    #hero.hero-v3 .hero-v3-ring {
-      position: absolute; width: 300px; height: 300px; border-radius: 50%;
-      border: 1.5px dashed rgba(196,224,24,.55);
-      animation: heroV3Spin 40s linear infinite;
-    }
-    @keyframes heroV3Spin { from { transform: rotate(0); } to { transform: rotate(360deg); } }
-    #hero.hero-v3 .hero-v3-glow {
-      position: absolute; width: 280px; height: 280px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(196,224,24,.3), transparent 70%);
-    }
-    #hero.hero-v3 .hero-v3-img {
-      position: relative; z-index: 1; width: clamp(230px, 24vw, 380px);
-      filter: drop-shadow(0 40px 60px rgba(0,0,0,.36));
-      animation: heroV3Float 6s ease-in-out infinite;
-    }
-    @keyframes heroV3Float {
-      0%,100% { transform: translateY(0) rotate(-3deg); }
-      50% { transform: translateY(-18px) rotate(3deg); }
-    }
-
-    #hero.hero-v3 .hero-v3-specs {
-      position: relative; z-index: 2; background: var(--black);
-      display: grid; grid-template-columns: repeat(4, 1fr);
-    }
-    #hero.hero-v3 .hero-v3-spec {
-      padding: 22px 28px; border-left: 1px solid rgba(255,255,255,.12);
-      display: flex; align-items: baseline; gap: 10px;
-    }
-    #hero.hero-v3 .hero-v3-spec:first-child { border-left: none; }
-    #hero.hero-v3 .hero-v3-spec-val { font-family: var(--f-disp); font-size: 21px; font-weight: 800; color: #fff; }
-    #hero.hero-v3 .hero-v3-spec-lbl { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.4); }
-
-    #hero.hero-v3 .hero-v3-top, #hero.hero-v3 .hero-v3-copy > * {
-      opacity: 0; animation: heroV3In .75s ease forwards;
-    }
-    #hero.hero-v3 .hero-v3-top { animation-delay: .05s; }
-    #hero.hero-v3 .hero-v3-copy > *:nth-child(1) { animation-delay: .28s; }
-    #hero.hero-v3 .hero-v3-copy > *:nth-child(2) { animation-delay: .4s; }
-    #hero.hero-v3 .hero-v3-copy > *:nth-child(3) { animation-delay: .5s; }
-    #hero.hero-v3 .hero-v3-visual { opacity: 0; animation: heroV3In .9s ease .35s forwards; }
-    @keyframes heroV3In { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
-
-    @media (max-width: 900px) {
-      #hero.hero-v3 .hero-v3-mid { grid-template-columns: 1fr; }
-      #hero.hero-v3 .hero-v3-visual { margin-top: 40px; }
-      #hero.hero-v3 .hero-v3-specs { grid-template-columns: repeat(2, 1fr); }
-      #hero.hero-v3 .hero-v3-spec:nth-child(2n+1) { border-left: none; }
-      #hero.hero-v3 .hero-v3-spec:nth-child(n+3) { border-top: 1px solid rgba(255,255,255,.12); }
-      #hero.hero-v3 .hero-v3-ribbon, #hero.hero-v3 .hero-v3-ghost { display: none; }
-    }
-    @media (max-width: 640px) {
-      #hero.hero-v3 .hero-v3-top { padding: 108px 22px 0; }
-      #hero.hero-v3 .hero-v3-mid { padding: 32px 22px 48px; }
-      #hero.hero-v3 .hero-v3-headline { font-size: 46px; }
-      #hero.hero-v3 .hero-v3-sub { font-size: 14.5px; }
-      #hero.hero-v3 .hero-v3-ring { width: 220px; height: 220px; }
-      #hero.hero-v3 .hero-v3-glow { width: 200px; height: 200px; }
-      #hero.hero-v3 .hero-v3-img { width: min(58vw, 240px); }
     }
   </style>
 </head>
@@ -193,46 +66,31 @@
 </div>
 
 <!-- ── HERO ────────────────────────────────────────────────── -->
-<section id="hero" class="hero-v3">
-  <div class="hero-v3-ghost" aria-hidden="true">alco.</div>
-
-  <div class="hero-v3-ribbon">
-    <div class="hero-v3-ribbon-track">
-      <span>Built For High Achievers</span><span class="hero-v3-ribbon-dot">✦</span>
-      <span>DHM 200mg</span><span class="hero-v3-ribbon-dot">✦</span>
-      <span>Show Up Sharp</span><span class="hero-v3-ribbon-dot">✦</span>
-      <span>Built For High Achievers</span><span class="hero-v3-ribbon-dot">✦</span>
-      <span>DHM 200mg</span><span class="hero-v3-ribbon-dot">✦</span>
-      <span>Show Up Sharp</span><span class="hero-v3-ribbon-dot">✦</span>
+<section id="hero">
+  <div class="hero-content">
+    <span class="hero-tag">★ Anti Hangover Jelly · DHM 200mg</span>
+    <h1 class="hero-headline">TOMORROW<br><mark>STARTS</mark><br>TONIGHT.</h1>
+    <p class="hero-sub">The 15ml anti-hangover jelly stick with DHM 200mg. Pop one before you sleep and wake up clear. No fog, no regret. Because big nights and good mornings shouldn't be a choice.</p>
+    <div class="hero-ctas">
+      <a href="shop.html" class="btn btn-lime">Shop the Drop</a>
+      <a href="#science" class="btn btn-white-ghost">See the Science</a>
+    </div>
+    <div class="hero-trust">
+      <span>DHM 200mg</span>
+      <span class="hero-trust-dot">·</span>
+      <span>Ships AU-wide</span>
+      <span class="hero-trust-dot">·</span>
+      <span>15ml format</span>
+      <span class="hero-trust-dot">·</span>
+      <span>12-stick carton</span>
     </div>
   </div>
-
-  <div class="hero-v3-top">
-    <span class="hero-v3-eyebrow">Performance Recovery · DHM 200mg</span>
-    <h1 class="hero-v3-headline">TOMORROW<br><mark>STARTS</mark> TONIGHT.</h1>
+  <div class="hero-visual">
+    <div class="hero-visual-ring"></div>
+    <img src="images/alco-blue.png" alt="alco. cobalt anti hangover jelly stick">
   </div>
-
-  <div class="hero-v3-mid">
-    <div class="hero-v3-copy">
-      <p class="hero-v3-sub">A 15ml recovery stick with a proven 200mg dose of DHM. Take one before you sleep, wake up clear and ready to perform. For people whose mornings can't afford to lose to their nights.</p>
-      <div class="hero-v3-ctas">
-        <a href="shop.html" class="btn btn-lime">Shop the Range</a>
-        <a href="#science" class="btn btn-white-ghost">See the Science</a>
-      </div>
-      <p class="hero-v3-note">Built for <strong>founders</strong>, <strong>athletes</strong>, and <strong>executives</strong> who don't slow down.</p>
-    </div>
-    <div class="hero-v3-visual">
-      <div class="hero-v3-ring"></div>
-      <div class="hero-v3-glow"></div>
-      <img class="hero-v3-img" src="images/alco-blue.png" alt="alco. cobalt anti hangover jelly stick">
-    </div>
-  </div>
-
-  <div class="hero-v3-specs">
-    <div class="hero-v3-spec"><span class="hero-v3-spec-val">200mg</span><span class="hero-v3-spec-lbl">DHM Dose</span></div>
-    <div class="hero-v3-spec"><span class="hero-v3-spec-val">15ml</span><span class="hero-v3-spec-lbl">Per Stick</span></div>
-    <div class="hero-v3-spec"><span class="hero-v3-spec-val">12</span><span class="hero-v3-spec-lbl">Stick Carton</span></div>
-    <div class="hero-v3-spec"><span class="hero-v3-spec-val">AU</span><span class="hero-v3-spec-lbl">Ships Nationwide</span></div>
+  <div class="hero-star">
+    <svg viewBox="0 0 40 40"><path d="M20 0L22 18L40 20L22 22L20 40L18 22L0 20L18 18Z" fill="#C4E018"/></svg>
   </div>
 </section>
 
